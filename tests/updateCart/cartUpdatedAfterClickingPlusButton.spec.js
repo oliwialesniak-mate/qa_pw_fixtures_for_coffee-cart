@@ -18,18 +18,18 @@ test('Assert cart updated correctly after clicking plus for drinks', async ({ me
 
   // Espresso initially (2 cups)
   await cartPage.assertEspressoTotalCostContainsCorrectText(
-    priceFormatStr(espressoPrice, 2)
+    totalPriceFormatStr(espressoPrice, 2)
   );
 
   // Espresso after +1 (3 cups)
   await cartPage.clickAddOneEspressoButton();
   await cartPage.assertEspressoTotalCostContainsCorrectText(
-    priceFormatStr(espressoPrice, 3)
+    totalPriceFormatStr(espressoPrice, 3)
   );
 
   // Cappuccino still 1 cup
   await cartPage.assertCappuccinoTotalCostContainsCorrectText(
-    priceFormatStr(cappuccinoPrice, 1)
+    totalPriceFormatStr(cappuccinoPrice, 1)
   );
 
   // Final total: (3x espresso + 1x cappuccino)
