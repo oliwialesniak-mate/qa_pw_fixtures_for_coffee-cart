@@ -6,12 +6,9 @@ export function unitPriceFormatStr(unitPrice: number, unitsNumber: number): stri
   return `${unitPrice.toFixed(2)} x ${unitsNumber}`;
 }
 
-/**
- * Formats a unit price into a currency string.
- * Example: priceFormatStr(10) => "$10.00"
- */
-export function priceFormatStr(unitPrice: number): string {
-  return `$${unitPrice.toFixed(2)}`;
+export function priceFormatStr(unitPrice: number, unitsNumber?: number): string {
+  const total = unitsNumber ? unitPrice * unitsNumber : unitPrice;
+  return `$${total.toFixed(2)}`;
 }
 
 /**

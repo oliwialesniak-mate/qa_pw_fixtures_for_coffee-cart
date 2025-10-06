@@ -34,5 +34,7 @@ test('Assert cart updated correctly after clicking plus for drinks', async ({ me
 
   // Final total: (3x espresso + 1x cappuccino)
   const total = espressoPrice * 3 + cappuccinoPrice * 1;
-  await cartPage.assertTotalCheckoutContainsValue(`$${total.toFixed(2)}`);
+  await cartPage.assertTotalCheckoutContainsValue(
+    priceFormatStr(total)
+  );
 });
